@@ -1,0 +1,40 @@
+
+//DISPLAY TABLE (CENTRAR UN ELEMENTO VERTICALMENTE DE FORMA AUTOMÁTICA)
+
+
+//CONTENEDOR
+display-table()
+	display table
+	height 100%
+	margin: 0 auto;
+
+//ELEMENTO CENTRADO
+display-table-cell()
+	display table-cell
+	vertical-align middle
+
+
+// CENTER (CENTRAR UN ELEMENTO HORIZONTALMENTE)
+centers(size)
+	margin 0 auto
+	display block
+	clear both
+	width 100%
+	height inherit
+	max-width size
+
+
+// CLEARFIX
+clearfix()
+	&:before,
+	&:after
+		content: " ";
+		display: table;
+	&:after
+		clear: both;
+
+
+
+
+
+

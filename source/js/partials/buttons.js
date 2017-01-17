@@ -1,0 +1,60 @@
+var Buttons = (function() {
+  'use strict';
+
+
+
+  //////////////////////////
+  //// VARIABLES PRIVADAS ////
+  ////////////////////////////
+  var vars = {},
+    methods = {};
+
+
+
+
+
+
+  ////////////////////////////
+  //// VARIABLES GLOBALES ////
+  ////////////////////////////
+  vars = {};
+
+
+
+
+
+
+
+  //////////////////////////
+  //// METODOS PRIVADOS ////
+  //////////////////////////
+
+
+
+
+
+
+
+
+
+  //////////////////////////
+  //// METODOS PUBLICOS ////
+  //////////////////////////
+  methods.btns = function() {
+
+  };
+
+
+
+
+
+
+
+
+  return {
+    methods: methods,
+    vars: vars
+  };
+
+
+})();
