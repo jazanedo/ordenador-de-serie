@@ -103,16 +103,30 @@ var InitModule = (function(Modernizr) {
       $('.hover').removeClass('hover');
     }
 
+    /* **************************************************************************************************************
+    INICIO CODIGO
+    ************************************************************************************************************** */
+
+    // Init Isotope
+    var $grid = $("#contentOrderingLib").isotope({
+      itemSelector: ".number",
+      layoutMode: 'fitRows',
+      getSortData: {
+        category: "[data-number] parseInt"
+      },
+      sortBy : 'category'
+    });
+
+
+    // Clic para agregar número, validado para que el número no se repita y para que no se agregue vacío
     $("#btnAddNumber").on("click", function(){
 
       var tmp_val = $("#txtAddNumber").val();
       var tmp_bool = false;
-      
-      console.log($('.content-ordering .number[data-number="'+tmp_val+'"]'))
+      var item = '<span class="number" data-number="'+tmp_val+'">'+tmp_val+'</span>';
+      var $item_grid = $('<span class="number" data-number="'+tmp_val+'">'+tmp_val+'</span>');
 
-      $(".content-ordering .number").each(function(index){
-
-        // console.log( index + ": " + $( this ).attr("data-number") );
+      $("#contentOrdering .number").each(function(index){
         
         if($(this).attr("data-number") == tmp_val){
           
@@ -126,33 +140,49 @@ var InitModule = (function(Modernizr) {
 
       });
 
-      if(tmp_bool == false && tmp_val){
+      if(tmp_bool === false && tmp_val){
 
         $(".msg-error").removeClass("view-error");
-        $(".content-ordering").append('<span class="number" data-number="'+tmp_val+'">'+tmp_val+'</span>');
+        // Agregar elemento a lista 1
+        $("#contentOrdering").append(item);
+        // Agregar elemento a lista 2
+        $grid.append($item_grid).isotope('appended', $item_grid);
+
         $("#txtAddNumber").val("").focus();
       
       }else{
 
         $(".msg-error").addClass("view-error");
         $("#txtAddNumber").focus();
+      
       }
-
-
 
     });
 
 
+    // Ordenamiento ascendente por progragación
     $("#btnSortAsc").on("click", function(){
 
-      var wrapper = $(".content-ordering");
+      var wrapper = $("#contentOrdering");
 
       wrapper.find(".number").sort(function (a, b) {
           return +a.dataset.number - +b.dataset.number;
-      })
-      .appendTo(wrapper);
+      }).appendTo(wrapper);
 
     });
+
+
+    // Ordenamiento ascendente con librería
+    $("#btnSortAscLib").on("click", function(){
+
+      $grid.isotope({ sortBy: 'number' });
+
+    });
+
+    /* **************************************************************************************************************
+    FIN CODIGO
+    ************************************************************************************************************** */
+
 
   };
 

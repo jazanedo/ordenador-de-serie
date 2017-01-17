@@ -33,6 +33,7 @@ button.btn-add-number {
 input.btn-sort,
 button.btn-sort {
   display: inline-block;
+  margin: 5px 0;
   width: 255px;
 }
 .wrapper {
@@ -59,9 +60,9 @@ button.btn-sort {
 .wrapper .content-ordering {
   border: dotted 1px #000;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   padding: 15px;
-  text-align: center;
+  text-align: left;
   width: 400px;
 }
 .wrapper .content-ordering .number {
