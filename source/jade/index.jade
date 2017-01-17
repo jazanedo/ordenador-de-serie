@@ -1,9 +1,25 @@
 extends partials/wrapper
 block custontitle
-	|Demo
+	|Ordenador de serie
 block custonhead
 block custonbody
 	// All body html
+	section.wrapper
+		section.content-add-number
+			input.txt-add-number(id="txtAddNumber" type="number" placeholder="Agregar número")
+			button.btn-add-number(id="btnAddNumber" type="button") Agregar
+			span.msg-error Error, campo vacío o número repetido.
+			hr
+			button.btn-sort(id="btnSortAsc" type="button") Orden Ascendente
+		section.content-ordering
+			span.number(data-number="6") 6
+			span.number(data-number="5") 5
+			span.number(data-number="3") 3
+			span.number(data-number="1") 1
+			span.number(data-number="8") 8
+			span.number(data-number="7") 7
+			span.number(data-number="2") 2
+			span.number(data-number="4") 4
 
 block custonjs
 

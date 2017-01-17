@@ -4,3 +4,60 @@
 ////////////////////////////////////////////
 
 
+body
+	background #EEE
+	font-family "Arial"
+	font-size 14px
+	
+hr
+	margin 10px 0
+	border-top dotted 1px #999
+
+input, button
+	font-size 13px
+	padding 5px
+	vertical-align top
+	&.txt-add-number
+		display inline-block
+		width 150px
+	&.btn-add-number
+		display inline-block
+		width 100px
+	&.btn-sort
+		display inline-block
+		width 255px
+	
+.wrapper
+	display block
+	
+	.content-add-number
+		border dotted 1px #000
+		display block
+		margin 50px auto 20px
+		padding 15px
+		text-align center
+		width 400px
+		.msg-error
+			color red
+			display none
+			font-size 13px
+			font-weight bold
+			margin-top 10px
+			&.view-error
+				display block
+	.content-ordering
+		border dotted 1px #000
+		display block
+		margin 0 auto
+		padding 15px
+		text-align center
+		width 400px
+		.number
+			display inline-block
+			font-size 20px
+			font-weight bold
+			margin 0 10px
+			-webkit-transition: all 1s ease;
+			-moz-transition: all 1s ease;
+			transition: all 1s ease;
+			vertical-align top

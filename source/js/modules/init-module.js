@@ -102,6 +102,58 @@ var InitModule = (function(Modernizr) {
     if (vars.isMobile) {
       $('.hover').removeClass('hover');
     }
+
+    $("#btnAddNumber").on("click", function(){
+
+      var tmp_val = $("#txtAddNumber").val();
+      var tmp_bool = false;
+      
+      console.log($('.content-ordering .number[data-number="'+tmp_val+'"]'))
+
+      $(".content-ordering .number").each(function(index){
+
+        // console.log( index + ": " + $( this ).attr("data-number") );
+        
+        if($(this).attr("data-number") == tmp_val){
+          
+          tmp_bool = true;
+          return false;
+        
+        }else{
+          
+          tmp_bool = false;
+        }
+
+      });
+
+      if(tmp_bool == false && tmp_val){
+
+        $(".msg-error").removeClass("view-error");
+        $(".content-ordering").append('<span class="number" data-number="'+tmp_val+'">'+tmp_val+'</span>');
+        $("#txtAddNumber").val("").focus();
+      
+      }else{
+
+        $(".msg-error").addClass("view-error");
+        $("#txtAddNumber").focus();
+      }
+
+
+
+    });
+
+
+    $("#btnSortAsc").on("click", function(){
+
+      var wrapper = $(".content-ordering");
+
+      wrapper.find(".number").sort(function (a, b) {
+          return +a.dataset.number - +b.dataset.number;
+      })
+      .appendTo(wrapper);
+
+    });
+
   };
 
 
