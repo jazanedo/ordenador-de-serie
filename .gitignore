@@ -1,7 +1,7 @@
 ### PROYECTO ###
 *.map
 # ARCHIVOS GENERADOS
-dist
+# dist
 
 # Created by https://www.gitignore.io
 
